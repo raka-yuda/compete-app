@@ -14,20 +14,7 @@
 
 ## **Preview**
 
-- Login Page :
-  ![list](public/preview/login-page.png)
-  
-- Dashboard Page :
-  ![list](public/preview/dashboard-page.png)
-  
-- Tenant List Page :
-  ![list](public/preview/tenant-list-page.png)
-
-- View Detail Tenant :
-  ![list](public/preview/modal-tenant-list.png)
-
-- Product List Page :
-  ![list](public/preview/product-list-page.png)
+- 
 
 ## **How To Deploy**
 
