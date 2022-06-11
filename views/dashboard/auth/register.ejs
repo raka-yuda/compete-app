@@ -1,5 +1,5 @@
 <%- include ../../partials/header.ejs %>
-  <body class="bg-gradient-primary" style="min-height: 100vh">
+  <body class="bg-light" style="min-height: 100vh">
     <div class="container" style="min-height: 100vh">
       <!-- Outer Row -->
       <div
@@ -11,7 +11,15 @@
             <div class="card-body p-0">
               <!-- Nested Row within Card Body -->
               <div class="row">
-                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                <div 
+                  class="col-lg-6 d-none d-lg-block"
+                  style="
+                  background-image: url('https://images.pexels.com/photos/1422292/pexels-photo-1422292.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+                  background-position: center;
+                  background-size: cover;
+                  "
+                >
+                </div>
                 <div class="col-lg-6">
                   <div class="p-5">
                     <div class="text-center">
@@ -73,7 +81,7 @@
                         </div> -->
                       <button
                         type="submit"
-                        class="btn btn-primary btn-user btn-block"
+                        class="btn btn-dark btn-user btn-block"
                       >
                         Register
                       </button>
