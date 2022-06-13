@@ -28,7 +28,7 @@ const processScrapeSeminar = async () => {
     };
 
     for (const dataSeminar of LIST_DATA_SEMINAR_CATEGORIES) {
-        const browser = await puppeteer.launch()
+        const browser = await puppeteer.launch({ args: ['--no-sandbox'] })
         const page = await browser.newPage()
         const url = dataSeminar.urlTarget
         await page.goto(url)
@@ -75,7 +75,7 @@ const getPagination = async (url) => {
     if (hostname === "planbe.id") {
         let maxPagination = 2;
 
-        // const browser = await puppeteer.launch()
+        // const browser = await puppeteer.launch({ args: ['--no-sandbox'] })
         // const page = await browser.newPage()
         // const url = "https://planbe.id/info-acara/?s&filter-title=lomba"
         // await page.goto(url)
@@ -124,7 +124,7 @@ const processScrapeCompetition = async () => {
                 let tempListDataCompetition = [];
 
                 for (const urlDataCompetition of listUrlPagination) {
-                    const browser = await puppeteer.launch()
+                    const browser = await puppeteer.launch({ args: ['--no-sandbox'] })
                     const page = await browser.newPage()
                     const url = urlDataCompetition
                     await page.goto(url)
