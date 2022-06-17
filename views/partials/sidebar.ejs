@@ -28,18 +28,19 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item <%= activePath === "Seminar" || activePath === "Contest" ? "active" : "" %>">
+    <li class="nav-item <%= activePath === "Seminar" || activePath === "Contest" || activePath === "List Contest" ? "active" : "" %>">
         <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
             aria-controls="collapseTwo">
             <i class="fas fa-fw fa-table"></i>
             <span>Data</span>
         </a>
-        <div id="collapseTwo" class="collapse <%= activePath === "Seminar" || activePath === "Contest" ? "show" : "" %> " aria-labelledby="headingTwo"
+        <div id="collapseTwo" class="collapse <%= activePath === "Seminar" || activePath === "Contest" || activePath === "List Contest" ? "show" : "" %> " aria-labelledby="headingTwo"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">List for Upskill:</h6>
                 <a class="collapse-item <%= activePath === "Seminar" ? "active" : "" %>" href="/up-skill/seminar">Seminar</a>
                 <a class="collapse-item <%= activePath === "Contest" ? "active" : "" %>" href="/up-skill/contest">Contest</a>
+                <a class="collapse-item <%= activePath === "List Contest" ? "active" : "" %>" href="/up-skill/list-contest">List Contest</a>
             </div>
         </div>
     </li>

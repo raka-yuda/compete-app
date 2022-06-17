@@ -14,6 +14,33 @@
     <!-- Page level custom scripts -->
     <script src="/sb-admin/js/demo/chart-area-demo.js"></script>
     <script src="/sb-admin/js/demo/chart-pie-demo.js"></script>
+
+      <!-- Page level plugins -->
+      <script src="/sb-admin/vendor/datatables/jquery.dataTables.min.js"></script>
+      <script src="/sb-admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  
+      <script type="text/javascript" src="libs/FileSaver/FileSaver.min.js"></script>
+
+      <script type="text/javascript" src="libs/js-xlsx/xlsx.core.min.js"></script>
+
+
+      <script>
+        $(document).ready(function () {
+            $('#table-list-competition').DataTable({
+                processing: true,
+                serverSide: true,
+                // pagingType: "full_numbers",
+                paging: true,
+                // lengthMenu: [10, 25, 50, 75, 100],
+                ajax: `${window.location.origin}/scrape/list-competition`,
+                // dom: 'Bfrtip',
+                // buttons: [
+                //     'copy', 'csv', 'excel', 'pdf', 'print'
+                // ]
+            });
+        });
+
+    </script>
     
   </body>
 </html>
