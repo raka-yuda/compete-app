@@ -3,6 +3,8 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">List of Webinar</h1>
+
+    <div id="list-seminar"></div>
     
     <% dataSeminar.dataSeminar.forEach(dataByCategory => { %>
         <p class="mb-4">Category of : <%= dataByCategory.category.charAt(0).toUpperCase() + dataByCategory.category.slice(1) %></p>
@@ -27,5 +29,29 @@
     <% }) %>
     
 </div>
-
 <!-- /.container-fluid -->
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+
+    const BASE_URL = 'http://localhost:3000';
+    const PATH_API_SEMINAR = '/scrape/seminar-new';
+
+    const getDataSeminarFromAPI = async (page = 1, limit = 10) => {
+        try {
+            const res = await axios.get(`${BASE_URL + PATH_API_SEMINAR}?page=${page}&limit=${limit}`)
+            return res.data
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+
+    const start = async () => {
+        const data = await getDataSeminarFromAPI()
+        console.log(data)
+    }
+
+    start()
+    
+</script> -->
+

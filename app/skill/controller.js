@@ -4,14 +4,19 @@ const Scrap = require('../scrape/controller')
 module.exports = {
     getDataSeminar: async (req, res) => {
         try {
+
+            const { page = 1, limit = 1 } = req.query;
+
             const alertMessage = req.flash("alertMessage")
             const alertStatus = req.flash("alertStatus")
 
             const alert = { message: alertMessage, status: alertStatus}
 
             const dataSeminar = Scrap.readJsonData("data-seminar");
-            
-            // console.log(dataSeminar)
+
+            // const baseUrl = req.protocol + "://" + req.headers.host;
+            // const apiSeminar = '/scrape/seminar-new';
+            // const seminarUrlAPI = `${baseUrl + apiSeminar}?page=${page}&limit=${limit}` 
 
             res.render("template/dashboard", {
                 alert,
@@ -46,7 +51,26 @@ module.exports = {
                 dataCompetition,
                 content: "dashboard/skill/view_competition"
             })
-            // console.log(dataSeminar)
+            
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
+    getListDataContest: async (req, res) => {
+        try {
+            const alertMessage = req.flash("alertMessage")
+            const alertStatus = req.flash("alertStatus")
+
+            const alert = { message: alertMessage, status: alertStatus}
+
+            res.render("template/dashboard", {
+                alert,
+                title: "Compete App | Dashboard",
+                activePath: "List Contest",
+                user: req.session.user,
+                content: "dashboard/skill/view_list_competition"
+            })
             
         } catch (error) {
             console.log(error)
