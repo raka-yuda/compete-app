@@ -15,8 +15,8 @@ module.exports = {
             // const dataSeminar = Scrap.readJsonData();
             // console.log(dataSeminar)
 
-            const dataSeminar = Scrap.readJsonData("data-seminar");
-            const dataCompetition = Scrap.readJsonData("data-competition") 
+            // const dataSeminar = Scrap.readJsonData("data-seminar");
+            // const dataCompetition = Scrap.readJsonData("data-competition") 
 
             res.render("template/dashboard", {
                 alert,
@@ -24,10 +24,10 @@ module.exports = {
                 activePath: "Dashboard",
                 user: req.session.user,
                 dataLength: {
-                    dataSeminarAll: dataSeminar.dataSeminar[0].length + dataSeminar.dataSeminar[1].length,
-                    dataSeminarSeni: dataSeminar.dataSeminar[0].length,
-                    dataSeminarTech: dataSeminar.dataSeminar[1].length,
-                    dataContest: dataCompetition.dataCompetition[0].length
+                    // dataSeminarAll: dataSeminar.dataSeminar[0].length + dataSeminar.dataSeminar[1].length,
+                    // dataSeminarSeni: dataSeminar.dataSeminar[0].length,
+                    // dataSeminarTech: dataSeminar.dataSeminar[1].length,
+                    // dataContest: dataCompetition.dataCompetition[0].length
                 },
                 content: "dashboard/user/view_user"
             })
