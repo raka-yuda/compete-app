@@ -64,6 +64,7 @@ module.exports = {
             const { email, password } = req.body
             
             const existedUser = await User.findOne({ email: email })
+            console.log("existedUser: ", existedUser)
       
             if (existedUser) {
                 if (existedUser.isActive) {
@@ -97,6 +98,7 @@ module.exports = {
             }
         
         } catch (err) {
+            console.log("err login: ", err)
             req.flash('alertMessage', `${err.message}`)
             req.flash('alertStatus', 'danger')
             res.redirect('/auth/login')
