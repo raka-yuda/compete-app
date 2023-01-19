@@ -4,7 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override')
-const session = require('express-session')
+// const session = require('express-session')
+const session = require('cookie-session');
+const Keygrip = require('keygrip');
 const flash = require('connect-flash');
 var cors = require('cors')
 const config = require('./config')
@@ -20,11 +22,16 @@ app.use(cors())
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// app.use(session({
+//   secret: config.sessionKey,
+//   resave: false,
+//   saveUninitialized: true,
+//   cookie: {}
+// }))
+
 app.use(session({
-  secret: config.sessionKey,
-  resave: false,
-  saveUninitialized: true,
-  cookie: {}
+  name: 'session',
+  keys: new Keygrip([config.sessionKey], 'SHA384')
 }))
 
 app.use(flash());
